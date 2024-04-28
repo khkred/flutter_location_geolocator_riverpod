@@ -5,9 +5,6 @@ enum LocationPermission {
   /// The location permission is granted.
   granted,
 
-  /// The location permission is denied forever.
-  deniedForever,
-
   /// The location permission is unknown.
   unknown,
 
