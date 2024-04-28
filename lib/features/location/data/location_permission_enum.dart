@@ -1,4 +1,4 @@
-enum LocationPermission {
+enum LocationPermissions {
   /// The location permission is denied.
   denied,
 
