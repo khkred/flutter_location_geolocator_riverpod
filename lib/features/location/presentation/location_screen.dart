@@ -23,7 +23,7 @@ class LocationScreen extends ConsumerWidget {
           if (locationState.position != null)
             Text('Longitude: ${locationState.position!.longitude.toStringAsFixed(4)}'),
           ElevatedButton(
-            onPressed: () => locationNotifier.getLocation(),
+            onPressed: () => locationNotifier.getLocation(context),
             child: const Text('Locate Me'),
           ),
         ],

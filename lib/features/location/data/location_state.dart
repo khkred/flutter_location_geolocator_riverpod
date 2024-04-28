@@ -1,9 +1,8 @@
-import 'package:flutter_location_geolocator_riverpod/features/location/data/location_permission_enum.dart';
 import 'package:geolocator/geolocator.dart';
 
 class GetLocationState {
   final Position? position;
-  final LocationPermissions permission;
+  final LocationPermission permission;
 
   GetLocationState({
      this.position,
@@ -12,13 +11,13 @@ class GetLocationState {
 
   factory GetLocationState.initial() {
     return GetLocationState(
-      permission: LocationPermissions.unknown,
+      permission: LocationPermission.unableToDetermine,
     );
   }
 
   GetLocationState copyWith({
     Position? position,
-    LocationPermissions? permission,
+    LocationPermission? permission,
   }) {
     return GetLocationState(
       position: position ?? this.position,

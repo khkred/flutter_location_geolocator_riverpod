@@ -6,8 +6,8 @@ final locationRepositoryProvider = Provider<LocationRepository>((ref) => Locatio
 class LocationRepository {
   Future<Position?> getCurrentLocation() async {
     try {
-      LocationPermission permission = await _checkPermissions();
-      if (permission == LocationPermission.denied) {
+      LocationPermission permission = await checkPermissions();
+      if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
         return null;
       }
       return await Geolocator.getCurrentPosition();
@@ -17,10 +17,11 @@ class LocationRepository {
     }
   }
 
-  Future<LocationPermission> _checkPermissions() async {
+  Future<LocationPermission> checkPermissions() async {
     LocationPermission permission = await Geolocator.checkPermission();
 
-    if (permission == LocationPermission.denied) {
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.deniedForever) {
       permission = await Geolocator.requestPermission();
     }
 
