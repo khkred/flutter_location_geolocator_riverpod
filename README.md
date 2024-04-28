@@ -36,4 +36,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://opens
 
 ---
 
-Feel free to star this repository if you find it useful! For help with running or questions about the code, please email itsupport@digiquestacademy.edu.in.
+Feel free to star this repository if you find it useful! For help with running or questions about the code, please email khkrlife@gmail.com.
