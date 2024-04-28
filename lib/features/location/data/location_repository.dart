@@ -1,4 +1,7 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
+
+final locationRepositoryProvider = Provider<LocationRepository>((ref) => LocationRepository());
 
 class LocationRepository {
   Future<Position?> getCurrentLocation() async {

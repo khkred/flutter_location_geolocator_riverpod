@@ -15,4 +15,14 @@ class GetLocationState {
       permission: LocationPermissions.unknown,
     );
   }
+
+  GetLocationState copyWith({
+    Position? position,
+    LocationPermissions? permission,
+  }) {
+    return GetLocationState(
+      position: position ?? this.position,
+      permission: permission ?? this.permission,
+    );
+  }
 }
